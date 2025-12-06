@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>快点变有钱 - SmartLedger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #F6F7F9;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+      .animate-scale-in { animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      
+      .safe-area-pb { padding-bottom: env(safe-area-inset-bottom); }
+
+      /* Custom Scrollbar hide */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Background Orbs */
+      .bg-orb-1 {
+        position: fixed;
+        top: -10%;
+        right: -10%;
+        width: 80vw;
+        height: 80vw;
+        background: #fde68a; /* amber-200 */
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        filter: blur(80px);
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .bg-orb-2 {
+        position: fixed;
+        bottom: -10%;
+        left: -10%;
+        width: 80vw;
+        height: 80vw;
+        background: #fed7aa; /* orange-200 */
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        filter: blur(80px);
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <div class="bg-orb-1"></div>
+    <div class="bg-orb-2"></div>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

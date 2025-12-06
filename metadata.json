@@ -1,0 +1,5 @@
+{
+  "name": "Mymoney",
+  "description": "基于 Gemini AI 的智能记账助手，支持微信/支付宝截图识别、财务整理及债务清零规划。",
+  "requestFramePermissions": []
+}
